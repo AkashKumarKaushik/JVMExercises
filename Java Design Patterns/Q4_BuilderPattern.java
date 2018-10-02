@@ -1,3 +1,4 @@
+/*Q4) Implement Builder pattern to create a student object with more than 6 fields.*/
 package java6_Assgnmnt;
 
 class student{
