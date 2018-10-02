@@ -1,3 +1,4 @@
+/*Q4) Implement Abstract Factory Pattern to create cars of different categories from different countries.*/
 package java6_Assgnmnt;
 
 enum CarType{
