@@ -1,3 +1,4 @@
+/*Q8) Implement proxy design for accessing Record of a student and allow the access only to Admin. */
 package java6_Assgnmnt;
 
 interface Record{
