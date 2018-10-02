@@ -1,3 +1,4 @@
+/*Q2) Implement Factory Pattern to get the Polygon of differnt type. */
 package java6_Assgnmnt;
 
 import javafx.geometry.Side;
