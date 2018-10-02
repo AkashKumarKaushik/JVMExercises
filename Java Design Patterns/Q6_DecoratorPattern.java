@@ -1,3 +1,4 @@
+/*Q6) Implement Decorator pattern to decorate the Pizza with topings.*/
 package java6_Assgnmnt;
 
 interface Pizza {
