@@ -1,3 +1,4 @@
+/*Q7) Implement Composite Design Pattern to maintaing the directories of employees on the basis of departments.*/
 package java6_Assgnmnt;
 
 import java.util.ArrayList;
