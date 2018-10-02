@@ -1,3 +1,4 @@
+/* Q1) Implement Singleton Design Pattern on a dummy class.*/
 package java6_Assgnmnt;
 
 class SingletonDesign {
