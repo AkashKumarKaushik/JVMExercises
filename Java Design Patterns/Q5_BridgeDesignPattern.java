@@ -1,3 +1,5 @@
+/*Q5) Implement Bridge Design Pattern for Color and Shape such that Shape and Color can be combined together 
+e.g BlueSquare, RedSquare, PinkTriangle etc.*/
 package java6_Assgnmnt;
 
 
