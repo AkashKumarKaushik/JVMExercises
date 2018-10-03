@@ -1,91 +1,117 @@
 /*Q6) Implement Decorator pattern to decorate the Pizza with topings.*/
 package java6_Assgnmnt;
-
-interface Pizza {
-    String bakePizzainfo();
+interface Pizza_Attributes
+{
+    public String display();
 }
 
-class BasePizza implements Pizza{
-    @Override
-    public String bakePizzainfo() {
-        return "Basic Pizza";
+class Pizza implements Pizza_Attributes
+{
+    private String base;
+
+
+    public Pizza(String base) {
+        this.base = base;
+
     }
-    public float getCost(){
-        return 100;
+
+    public String getBase() {
+        return base;
+    }
+
+    public void setBase(String base) {
+        this.base = base;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Pizza{" +
+                "base='" + base +
+                '}';
+    }
+
+    @Override
+    public String display() {
+        return "Pizza with: " +base;
+
     }
 }
+class Toppings implements Pizza_Attributes
+{
+    private Pizza_Attributes pizza_attributes;
+    private String vegetable;
 
-class Mushroom implements Pizza {
-    private Pizza pizza;
-    private Integer cost;
-
-    public Mushroom(Pizza pizza, Integer cost) {
-        this.pizza = pizza;
-        this.cost = cost;
+    public Toppings(Pizza_Attributes pizza_attributes, String vegetable) {
+        this.pizza_attributes = pizza_attributes;
+        this.vegetable = vegetable;
     }
 
-    public Pizza getPizza() {
-        return pizza;
+    public Pizza_Attributes getPizza_attributes() {
+        return pizza_attributes;
     }
 
-    public void setPizza(Pizza pizza) {
-        this.pizza = pizza;
+    public void setPizza_attributes(Pizza_Attributes pizza_attributes) {
+        this.pizza_attributes = pizza_attributes;
     }
 
-    public Integer getCost() {
-        return cost;
+    public String getVegetable() {
+        return vegetable;
     }
 
-    public void setCost(Integer cost) {
-        this.cost = cost;
+    public void setVegetable(String vegetable) {
+        this.vegetable = vegetable;
     }
+
     @Override
-    public String bakePizzainfo() {
-        return pizza.bakePizzainfo() + " : A mushroom Pizza With Cost "+cost;
+    public String display() {
+        pizza_attributes.display();
+        return "Vegetable: "+vegetable;
     }
 }
+class Seasonings implements Pizza_Attributes
+{
+    private Pizza_Attributes pizza_attributes;
+    private String seasonings;
 
-
-class Pepperoni implements Pizza {
-    private Pizza pizza;
-    private Integer cost;
-
-    public Pepperoni(Pizza pizza, Integer cost) {
-        this.pizza = pizza;
-        this.cost = cost;
+    public Seasonings(Pizza_Attributes pizza_attributes, String seasonings) {
+        this.pizza_attributes = pizza_attributes;
+        this.seasonings = seasonings;
     }
 
-    public Pizza getPizza() {
-        return pizza;
+    public Pizza_Attributes getPizza_attributes() {
+        return pizza_attributes;
     }
 
-    public void setPizza(Pizza pizza) {
-        this.pizza = pizza;
+    public void setPizza_attributes(Pizza_Attributes pizza_attributes) {
+        this.pizza_attributes = pizza_attributes;
     }
 
-    public Integer getCost() {
-        return cost;
+    public String getSeasonings() {
+        return seasonings;
     }
 
-    public void setCost(Integer cost) {
-        this.cost = cost;
+    public void setSeasonings(String seasonings) {
+        this.seasonings = seasonings;
     }
+
     @Override
-    public String bakePizzainfo() {
-        return pizza.bakePizzainfo() + " : A Pepperoni Pizza With Cost "+cost;
+    public String display() {
+        pizza_attributes.display();
+        return "Seasonings are: "+seasonings;
     }
 }
 
 public class Q6_DecoratorPattern {
     public static void main(String[] args) {
-        BasePizza basePizza = new BasePizza();
-        System.out.println(basePizza.bakePizzainfo());
+        Pizza pizza=new Pizza("Thin Crust");
+        System.out.println(pizza.display());
 
-        Mushroom mushroom = new Mushroom(new BasePizza() , 500);
-        System.out.println(mushroom.bakePizzainfo());
+        Toppings toppings=new Toppings(new Pizza("Thin Crust"),"Onion and Capsicum");
+        System.out.println(toppings.display());
 
-        Pepperoni pepperoni = new Pepperoni(new BasePizza(),750);
-        System.out.println(pepperoni.bakePizzainfo());
+        Seasonings seasonings=new Seasonings(new Pizza("Thin Crust"),"Chili Flakes and Oregano");
+        System.out.println(seasonings.display());
 
     }
 }
