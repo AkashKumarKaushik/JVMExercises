@@ -13,7 +13,7 @@ class ReverseHello implements Runnable{
         try{
             if(count < 10){
                 Thread newThread = new Thread(new ReverseHello(count+1));
-                newThread.setName("Thread "+ (count + 1));
+                newThread.setName("Hello From Thread "+ (count + 1));
 
                 newThread.start();
                 newThread.join();
@@ -28,7 +28,7 @@ public class Q4_ReverseHello {
     public static void main(String[] args) throws InterruptedException{
         ReverseHello reverseHello = new ReverseHello(1);
         Thread t1 = new Thread(reverseHello);
-        t1.setName("Thread 1");
+        t1.setName("Hello From Thread 1");
         t1.start();
         t1.join();
     }
