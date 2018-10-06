@@ -13,7 +13,7 @@ class ReverseHello implements Runnable{
         try{
             if(count < 10){
                 Thread newThread = new Thread(new ReverseHello(count+1));
-                newThread.setName("Hello From Thread "+ (count + 1));
+                newThread.setName("Hello  Thread "+ (count + 1));
 
                 newThread.start();
                 newThread.join();
