@@ -62,7 +62,7 @@ class BasketWeightCalculatorSpec extends Specification {
         basketWeightCalculator.addItem(-6)
 
         then: "expect both baskets to weigh the same"
-        basketWeightCalculator.getTotalWeight() == -18
+        basketWeightCalculator.getTotalWeight() == -6
         noExceptionThrown()
 
     }
